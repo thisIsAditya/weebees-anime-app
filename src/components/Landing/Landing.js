@@ -1,7 +1,8 @@
-const LandingComponent = () => {
+const LandingComponent = ({films}) => {
     return ( 
         <>
         Landing Component
+        {JSON.stringify(films)}
         </>
      );
 }
