@@ -4,31 +4,12 @@ import NavbarComponent from "../components/Navbar/Navbar.js";
 import NotFound from "../components/Utils/NotFound/NotFound.js";
 import LandingComponent from "../components/Landing/Landing.js";
 import AnimeComponent from "../components/Anime/Anime.js";
-import {getAllFilms} from "../API";
-import { useEffect, useState } from "react";
-const HomeComponent = ()=>{
-    /**
-     * State Management for App
-     */
-    const [films, setFilms] = useState([]);
-    useEffect(()=>{
-        const getFilms = async()=>{
-            try{
-                const response = await getAllFilms();
-                const films = response?.data;
-                setFilms(films);
-            }catch(err){
-                console.log(err);
-            }
-        }
-        getFilms();
-    },[]);
-    
+const HomeComponent = ()=>{    
     return(
         <Router>
             <NavbarComponent />
             <Routes>   
-                <Route path="/" element={<LandingComponent films={films}/>} exact />
+                <Route path="/" element={<LandingComponent/>} exact />
                 <Route path="/films/:id" element={<AnimeComponent/>} exact />
                 <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,12 +1,12 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-const CorouselComponent = () => {
+const CorouselComponent = ({featuredFilms}) => {
     return ( 
         <Carousel>
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=First slide&bg=373940"
+                src={featuredFilms[0]?.image}
                 alt="First slide"
                 />
                 <Carousel.Caption>
@@ -17,7 +17,7 @@ const CorouselComponent = () => {
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Second slide&bg=282c34"
+                src={featuredFilms[1]?.image}
                 alt="Second slide"
                 />
 
@@ -29,7 +29,7 @@ const CorouselComponent = () => {
             <Carousel.Item>
                 <img
                 className="d-block w-100"
-                src="holder.js/800x400?text=Third slide&bg=20232a"
+                src={featuredFilms[2]?.image}
                 alt="Third slide"
                 />
 
@@ -39,6 +39,7 @@ const CorouselComponent = () => {
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
+        
      );
 }
  
