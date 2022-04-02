@@ -4,6 +4,7 @@ import {getAllFilms} from "../../API";
 import LoadingComponent from "../Utils/Loading/LoadingComponent.js";
 import ErrorComponent from "../Utils/Error/ErrorComponent.js";
 import SliderComponent from "../Slider/SliderComponent.js";
+import InfiniteScrollGrid from "../InfiniteScrollGrid/InfiniteScrollGrid.js";
 const LandingComponent = () => {
     /**
      * State Management
@@ -40,7 +41,8 @@ const LandingComponent = () => {
             {isLoading && <LoadingComponent />}
             {err && <ErrorComponent err={err} />}
             <CorouselComponent isLoading={isLoading} err={err} featuredFilms={featuredFilms.slice(0,3)} />
-            <SliderComponent isLoading={isLoading} err={err} topRated={featuredFilms.slice(2,12)} title="Top Rated" />            
+            <SliderComponent isLoading={isLoading} err={err} topRated={featuredFilms.slice(2,12)} title="Top Rated" />
+            <InfiniteScrollGrid items={films} isLoading={isLoading} err={err} />
         </div>
      );
 }
