@@ -11,7 +11,7 @@ const LandingComponent = () => {
     const [films, setFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [err, setErr] = useState(null);
-    const [featuredFilms, setFeaturedFilms] = useState(null);
+    const [featuredFilms, setFeaturedFilms] = useState([]);
     useEffect(()=>{
         const getFilms = async()=>{
             try{
@@ -38,9 +38,9 @@ const LandingComponent = () => {
     return ( 
         <div>
             {isLoading && <LoadingComponent />}
-            {err && <ErrorComponent />}
-            {featuredFilms && <CorouselComponent featuredFilms={featuredFilms.slice(0,3)} />}
-            {featuredFilms && <SliderComponent topRated={featuredFilms.slice(2)} title="Top Rated" />}
+            {err && <ErrorComponent err={err} />}
+            <CorouselComponent isLoading={isLoading} err={err} featuredFilms={featuredFilms.slice(0,3)} />
+            <SliderComponent isLoading={isLoading} err={err} topRated={featuredFilms.slice(2,12)} title="Top Rated" />            
         </div>
      );
 }

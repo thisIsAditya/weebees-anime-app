@@ -1,7 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from "react-bootstrap/Card";
-const SliderComponent = ({topRated, title}) => {
+import LoadingComponent from "../Utils/Loading/LoadingComponent.js";
+import ErrorComponent from "../Utils/Error/ErrorComponent.js";
+const SliderComponent = ({topRated, title, err, isLoading}) => {
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -22,31 +24,38 @@ const SliderComponent = ({topRated, title}) => {
         }
     };
     return ( 
-        <div className='p-4 me-4'>
-            <h2>
-                {title}
-            </h2>
-            <Carousel
-                responsive={responsive}
-                swipeable={true}
-                draggable={true}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-            >
-                {
-                    topRated.map(film => (
-                        <Card key={film.id}>
-                            <Card.Img 
-                                variant="top" 
-                                src={film.image} 
-                                className = 'img-thumbnail'
-                            />                
-                        </Card>
-                    ))
-                }
-            </Carousel>
-        </div>
+        <>
+            { isLoading && <LoadingComponent /> }
+            { err && <ErrorComponent err={err}/> }
+            {
+                topRated && title &&
+                <div className='p-4 me-4'>
+                    <h2>
+                        {title}
+                    </h2>
+                    <Carousel
+                        responsive={responsive}
+                        swipeable={true}
+                        draggable={true}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                    >
+                        {
+                            topRated.map(film => (
+                                <Card key={film.id}>
+                                    <Card.Img 
+                                        variant="top" 
+                                        src={film.image} 
+                                        className = 'img-thumbnail'
+                                    />                
+                                </Card>
+                            ))
+                        }
+                    </Carousel>
+                </div>
+            }
+        </>
      );
 }
  
