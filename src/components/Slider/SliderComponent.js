@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import Card from "react-bootstrap/Card";
 import LoadingComponent from "../Utils/Loading/LoadingComponent.js";
 import ErrorComponent from "../Utils/Error/ErrorComponent.js";
+import {Link} from "react-router-dom";
 const SliderComponent = ({topRated, title, err, isLoading}) => {
     const responsive = {
         superLargeDesktop: {
@@ -43,13 +44,15 @@ const SliderComponent = ({topRated, title, err, isLoading}) => {
                     >
                         {
                             topRated.map(film => (
-                                <Card key={film.id}>
-                                    <Card.Img 
-                                        variant="top" 
-                                        src={film.image} 
-                                        className = 'img-thumbnail'
-                                    />                
-                                </Card>
+                                <Link to={`/films/${film.id}`} key={film.id}>
+                                    <Card>
+                                        <Card.Img 
+                                            variant="top" 
+                                            src={film.image} 
+                                            className = 'img-thumbnail'
+                                        />                
+                                    </Card>
+                                </Link>
                             ))
                         }
                     </Carousel>
