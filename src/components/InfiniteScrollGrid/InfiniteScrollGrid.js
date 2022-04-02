@@ -6,12 +6,13 @@ import ThumbnailComponent from '../Thumbnail/ThumbnailComponent.js';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 const InfiniteScrollGrid = ({items, isLoading, err}) => {
-    const [itemsToDisplay, setItemsToDisplay] = useState(null);
+    const [itemsToDisplay, setItemsToDisplay] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     useEffect(()=>{
         if(items.length > 0){
-            const itemsSet = new Set(items )
-            setItemsToDisplay(items.slice(0,12))
+            setTimeout(()=> {
+                setItemsToDisplay(items.slice(0,3));
+            }, 1000)
         }
     },[items])
     const nextData = ()=> {
@@ -19,17 +20,15 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
             setHasMore(false);
         }
         setTimeout(()=>{
-            const newItemsList = new Set([...itemsToDisplay, ...items.slice(itemsToDisplay.length, itemsToDisplay.length+12)]);
-            console.log(newItemsList);
-            setItemsToDisplay([...newItemsList]);
-        },2000)
+            setItemsToDisplay([...itemsToDisplay, ...items.slice(itemsToDisplay.length, itemsToDisplay.length+3)]);        
+        }, 1000)
     }
     return (
         <>
             {isLoading && <LoadingComponent />}
             {err && <ErrorComponent err={err} />}
             {
-                itemsToDisplay &&
+                itemsToDisplay.length !== 0 &&
                 <Container>
                     <InfiniteScroll
                         dataLength={itemsToDisplay.length} //This is important field to render the next data
