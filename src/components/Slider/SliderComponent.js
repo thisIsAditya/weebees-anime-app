@@ -36,7 +36,7 @@ const SliderComponent = ({topRated, title}) => {
             >
                 {
                     topRated.map(film => (
-                        <Card >
+                        <Card key={film.id}>
                             <Card.Img 
                                 variant="top" 
                                 src={film.image} 

@@ -25,7 +25,7 @@ const FooterComponent = () => {
                                         <h3>About Us</h3>
                                     </Card.Title>
                                     <Card.Text>                                
-                                        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -35,15 +35,13 @@ const FooterComponent = () => {
                                 <Card.Body>
                                     <Card.Title>
                                         <h3>Contact Us</h3>
-                                    </Card.Title>
-                                    <Card.Text>                                
-                                        <address> 
-                                            You can contact us at:<br/  >
-                                            TechOnTheNet.com<br/>
-                                            123 Somewhere St.<br/>
-                                            City, State
-                                        </address>
-                                    </Card.Text>
+                                    </Card.Title>                                                                 
+                                    <address> 
+                                        You can contact us at:<br/  >
+                                        TechOnTheNet.com<br/>
+                                        123 Somewhere St.<br/>
+                                        City, State
+                                    </address>                                    
                                 </Card.Body>
                             </Card>     
                         </Col>

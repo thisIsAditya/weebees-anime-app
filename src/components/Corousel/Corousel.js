@@ -6,14 +6,14 @@ const CorouselComponent = ({featuredFilms}) => {
             {
                 featuredFilms &&
                 featuredFilms.map(film => (
-                    <Carousel.Item>
+                    <Carousel.Item key={film.id}>
                         <img
                         className="d-block w-100"
                         src={film.movie_banner}
                         alt={`${film.title}'s Poster`}
                         style={{
                             "maxHeight" : "60vh",
-                            "object-fit" : "cover"
+                            "objectFit" : "cover"
                         }}
                         />
                         <Carousel.Caption className='align-items-center d-flex flex-column'>

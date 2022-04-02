@@ -30,8 +30,7 @@ const LandingComponent = () => {
     useEffect(()=>{
         if(films.length !== 0) {
             //Featured Films
-            const topRated = films.sort((a,b) => parseInt(a.rt_score) - parseInt(b.rt_score) )
-            console.log(topRated, "Top three films");
+            const topRated = films.sort((a,b) => parseInt(a.rt_score) - parseInt(b.rt_score) )            
             setFeaturedFilms(topRated);
             //Recents 
         }
