@@ -10,7 +10,7 @@ const FooterComponent = () => {
                 <Container>
                     <Row>
                         <Col md={4} className="mb-4">
-                        <Card className="d-flex align-items-center h-100 p-2 bg-opacity-25">
+                        <Card className="d-flex align-items-center h-100 p-2 bg-dark bg-opacity-75 text-white">
                             <Card.Img variant="top" src={fevicon} style={{"height" : "150px", "width" : "150px", "objectFit" : "contain"}} />
                             <Card.Body>                        
                                 <Card.Title>Author</Card.Title>
@@ -29,7 +29,7 @@ const FooterComponent = () => {
                                 </Card.Body>
                             </Card>
                         </Col>                               
-                        <Col md={4}>
+                        <Col md={4} className="mb-4">
                             <Card className="h-100 bg-dark bg-opacity-75 text-white">
                                 <Card.Body>
                                     <Card.Title>

@@ -21,12 +21,13 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
         }
         setTimeout(()=>{
             setItemsToDisplay([...itemsToDisplay, ...items.slice(itemsToDisplay.length, itemsToDisplay.length+3)]);        
-        }, 1000)
+        }, 500)
     }
     return (
-        <>
+        <div className='d-flex flex-column align-items-center bg-dark text-white py-4'>
             {isLoading && <LoadingComponent />}
             {err && <ErrorComponent err={err} />}
+            <h1>All Movies</h1>
             {
                 itemsToDisplay.length !== 0 &&
                 <Container>
@@ -52,7 +53,7 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
                     </InfiniteScroll>
                 </Container>
             }
-        </>
+        </div>
      );
 }
  
