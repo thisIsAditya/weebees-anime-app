@@ -2,42 +2,27 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const CorouselComponent = ({featuredFilms}) => {
     return ( 
-        <Carousel>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={featuredFilms[0]?.image}
-                alt="First slide"
-                />
-                <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={featuredFilms[1]?.image}
-                alt="Second slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src={featuredFilms[2]?.image}
-                alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
+        <Carousel variant="dark">
+            {
+                featuredFilms &&
+                featuredFilms.map(film => (
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        src={film.movie_banner}
+                        alt={`${film.title}'s Poster`}
+                        style={{
+                            "maxHeight" : "60vh",
+                            "object-fit" : "cover"
+                        }}
+                        />
+                        <Carousel.Caption className='align-items-center d-flex flex-column'>
+                        <h3 className='bg-dark text-light p-2 bg-opacity-50 w-md-25'   >{film.title}</h3>
+                        <p className='bg-dark text-light p-2 bg-opacity-50 d-none d-sm-block' >{`${film.description.substring(0,200)}...`}</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))
+            }
         </Carousel>
         
      );
