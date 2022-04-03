@@ -4,7 +4,7 @@ import favicon from  "../../assets/favicon.ico";
 import {Link} from "react-router-dom";
 const NavbarComponent = () => {
     return ( 
-        <Navbar bg="dark" variant="dark" className='py-md-4 py-ls-2 fixed-top bg-opacity-0'>
+        <Navbar bg="dark" variant="dark" className='py-md-4 py-ls-2 fixed-top bg-opacity-0 font-heading'>
             <Container>
                 <Link to="/" style={{"textDecoration" : "none"}}>
                     <Navbar.Brand>

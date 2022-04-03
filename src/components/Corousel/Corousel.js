@@ -24,7 +24,7 @@ const CorouselComponent = ({ featuredFilms , err , isLoading }) => {
                                 }}
                                 />
                                 <Carousel.Caption className='align-items-md-start align-items-center d-flex flex-column'>
-                                <h1 className='bg-dark text-light p-2 bg-opacity-75 w-md-25'   >{film.title}</h1>
+                                <h1 className='bg-dark text-light p-2 bg-opacity-75 w-md-25 font-heading'   >{film.title}</h1>
                                 <p className='bg-dark text-light p-2 bg-opacity-75 d-none d-sm-block' >{`${film.description.substring(0,200)}...`}</p>
                                 </Carousel.Caption>
                             </Link>                            

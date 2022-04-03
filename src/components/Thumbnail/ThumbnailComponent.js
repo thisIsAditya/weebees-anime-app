@@ -14,7 +14,7 @@ const ThumbnailComponent = ({movie}) => {
             <Card className="bg-dark text-white m-2" style={{width:"100%"}} >
                 <Card.Img src={`${Movie.image}`} alt="Card image" style={{opacity:0.4,maxHeight:"15rem", objectFit:"cover"}} />
                 <Card.ImgOverlay className="center">
-                    <Card.Title className="display-7"><b>{Movie.title}</b></Card.Title>
+                    <Card.Title className="display-7 font-heading"><b>{Movie.title}</b></Card.Title>
                     <Card.Text>                                                    
                         {`${Movie.description?.substring(0, 200)}...`}<b>Read more</b> <br />
                         Release Date : <b>{Movie.release_date}</b>

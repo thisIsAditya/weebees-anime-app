@@ -27,7 +27,7 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
         <div className='d-flex flex-column align-items-center bg-dark text-white py-4'>
             {isLoading && <LoadingComponent />}
             {err && <ErrorComponent err={err} />}
-            <h1>All Movies</h1>
+            <h1 className='font-heading'>All Movies</h1>
             {
                 itemsToDisplay.length !== 0 &&
                 <Container>

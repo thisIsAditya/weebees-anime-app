@@ -61,7 +61,7 @@ const AnimeComponent = () => {
                         </Col>
                         <Col lg={6} className="d-flex align-items-center p-4 text-white  mt-2 ms-sm-2 border-light bg-dark">
                             <div>                             
-                                <h2><b>{movie.title}</b>  <Badge bg="primary">{movie.rt_score}</Badge></h2>
+                                <h2 className="font-heading"><b>{movie.title}</b>  <Badge bg="primary">{movie.rt_score}</Badge></h2>
                                 <p><i>{movie.original_title_romanised}</i></p>
                                 <p><b>Runtime : </b>{movie.running_time} mins</p>
                                 <p>

@@ -31,7 +31,7 @@ const SliderComponent = ({topRated, title, err, isLoading}) => {
             {
                 topRated && title &&
                 <div className='p-4 me-4'>
-                    <h2>
+                    <h2 className="font-heading">
                         {title}
                     </h2>
                     <Carousel
