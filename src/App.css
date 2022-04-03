@@ -2,6 +2,11 @@ body{
     font-family: 'Mukta Vaani', sans-serif;
 }
 
+body a {
+    text-decoration: none;
+
+}
+
 .font-heading {
     font-family: 'Alegreya Sans', sans-serif;
 }
