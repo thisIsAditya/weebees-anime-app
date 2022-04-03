@@ -16,7 +16,7 @@ const ThumbnailComponent = ({movie}) => {
                 <Card.ImgOverlay className="center">
                     <Card.Title className="display-7"><b>{Movie.title}</b></Card.Title>
                     <Card.Text>                                                    
-                        {`${Movie.description?.substring(0, 200)}...`}<b>Read more</b>
+                        {`${Movie.description?.substring(0, 200)}...`}<b>Read more</b> <br />
                         Release Date : <b>{Movie.release_date}</b>
                     </Card.Text>
                 </Card.ImgOverlay>

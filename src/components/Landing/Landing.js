@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import CorouselComponent from "../Corousel/Corousel.js"; 
 import {getAllFilms} from "../../API";
-import LoadingComponent from "../Utils/Loading/LoadingComponent.js";
 import ErrorComponent from "../Utils/Error/ErrorComponent.js";
 import SliderComponent from "../Slider/SliderComponent.js";
 import InfiniteScrollGrid from "../InfiniteScrollGrid/InfiniteScrollGrid.js";
@@ -38,9 +37,8 @@ const LandingComponent = () => {
     },[films]);
     return ( 
         <div>
-            {isLoading && <LoadingComponent />}
             {err && <ErrorComponent err={err} />}
-            <CorouselComponent isLoading={isLoading} err={err} featuredFilms={featuredFilms.slice(0,3)} />
+            <CorouselComponent isLoading={isLoading} err={err} featuredFilms={featuredFilms.slice(0,3)}/>
             <SliderComponent isLoading={isLoading} err={err} topRated={featuredFilms.slice(2,12)} title="Top Rated" />
             <InfiniteScrollGrid items={films} isLoading={isLoading} err={err} />
         </div>

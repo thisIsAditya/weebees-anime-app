@@ -1,8 +1,10 @@
+import Spinner from 'react-bootstrap/Spinner'
 const LoadingComponent = () => {
     return ( 
-        <div className="d-flex align-items-center">
-            <strong>Loading...</strong>
-            <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        <div className="d-flex align-items-center mt-5 justify-content-center ">
+            <Spinner animation="grow" variant="danger" />
+            <Spinner animation="grow" variant="success" />
+            <Spinner animation="grow" variant="primary" />
         </div>
      );
 }

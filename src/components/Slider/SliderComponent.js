@@ -50,6 +50,10 @@ const SliderComponent = ({topRated, title, err, isLoading}) => {
                                             variant="top" 
                                             src={film.image} 
                                             className = 'img-thumbnail'
+                                            style={{
+                                                "maxHeight" : "24rem",
+                                                "objectFit" : "cover"
+                                            }}
                                         />                
                                     </Card>
                                 </Link>
