@@ -21,7 +21,7 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
         }
         setTimeout(()=>{
             setItemsToDisplay([...itemsToDisplay, ...items.slice(itemsToDisplay.length, itemsToDisplay.length+3)]);        
-        }, 500)
+        }, 800)
     }
     return (
         <div className='d-flex flex-column align-items-center bg-dark text-white py-4'>
@@ -35,7 +35,7 @@ const InfiniteScrollGrid = ({items, isLoading, err}) => {
                         dataLength={itemsToDisplay.length} //This is important field to render the next data
                         next={nextData}
                         hasMore={hasMore}
-                        loader={<h4>Loading...</h4>}
+                        loader={<LoadingComponent />}
                         endMessage={
                             <p style={{ textAlign: 'center' }}>
                             <b>Yay! You have seen it all</b>
